@@ -1,0 +1,68 @@
+/* ----------------------  LOAD FONTS FROM SERVER ------------------------------ */
+
+@font-face {
+	font-family: "GrotzecCond-Demibold";
+	src: url(https://mediainnovation.camd.northeastern.edu/2021/loveinthetimeofcovid/fonts/GrotzecCond-Demibold3.woff2);
+}
+
+@font-face {
+	font-family: "GrotzecCond-DemiboldItalic";
+	src: url(https://mediainnovation.camd.northeastern.edu/2021/loveinthetimeofcovid/fonts/GrotzecCond-DemiboldItalic.woff2);
+}
+
+@font-face {
+	font-family: "LeJeunePoster-Regular";
+	src: url(https://mediainnovation.camd.northeastern.edu/2021/loveinthetimeofcovid/fonts/LeJeunePoster-Regular.otf);
+}
+
+@font-face {
+	font-family: "LeJeunePoster-RegularItalic";
+	src: url(https://mediainnovation.camd.northeastern.edu/2021/loveinthetimeofcovid/fonts/LeJeunePoster-RegularItalic.otf);
+}
+
+/* ----------------------  BASIC CSS FOR MY STORY ------------------------------ */
+
+* {
+	box-sizing: border-box;
+}
+
+h1,
+h2 {
+	font-family: "GrotzecCond-Demibold", sans-serif;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+p {
+	font-family: "LeJeunePoster-Regular";
+	font-size: 18px;
+	line-height: 1.2;
+}
+
+.byline {
+	font-family: "GrotzecCond-Demibold";
+	text-align: center;
+	margin: 2em;
+}
+
+article {
+	width: 80%;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.title__container {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.title__intro {
+	width: 50%;
+	text-align: center;
+}
