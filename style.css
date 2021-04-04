@@ -30,6 +30,7 @@
 	--navy: #0001b3;
 	--dark-navy: #000066;
 	--pink: #ff0dd9;
+	--dark-pink: #b31299;
 	--font-main: #3e3d3d;
 	--font-sub: #747272;
 	--background-gray: #edebeb;
@@ -48,7 +49,7 @@ body {
 	position: relative;
 	margin: 0px;
 	padding: 0px;
-	font-size: 16px;
+	font-size: 18px;
 	color: var(--font-main);
 }
 
@@ -76,7 +77,7 @@ p {
 
 article {
 	width: 60%;
-	max-width: 600px;
+	max-width: 45ch;
 	margin: 0 auto;
 }
 
@@ -87,8 +88,25 @@ article {
 
 .swiper-slide {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+.swiper-prev-v,
+.swiper-next-v {
+	width: 100%;
+	height: 100px;
+	background: linear-gradient(gray 0%, rgba(255, 255, 255, 0) 100%);
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.swiper-next-v {
+	background: linear-gradient(rgba(255, 255, 255, 0) 0%, gray 100%);
 }
 
 /* ---------- #title ---------- */
@@ -108,10 +126,6 @@ article {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-}
-
-.title__left {
-	background: var(--background-gray);
 }
 
 .title__left__img {
@@ -134,4 +148,67 @@ article {
 	text-align: center;
 }
 
-/* ---------- #title ---------- */
+/* ---------- #part-1 ---------- */
+
+.part-title {
+	margin: 0;
+}
+
+#part-1 {
+	border-top: 30px solid var(--dark-navy);
+	border-left: 30px solid var(--navy);
+}
+
+#part-2 {
+	border-top: 30px solid var(--dark-pink);
+	border-left: 30px solid var(--pink);
+}
+
+#part-3 {
+	border-top: 30px solid var(--dark-yellow);
+	border-left: 30px solid var(--yellow);
+}
+
+/* ---------- DATA VIZ --------- */
+h4 {
+	margin: 0 auto;
+	width: 45ch;
+	text-align: center;
+}
+
+.chart {
+	width: 90%;
+	margin: 0 auto;
+	font-family: var(--sans-serif);
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#match-stock,
+#survey {
+	height: 300px;
+	width: 80%;
+	max-width: 1000px;
+	position: relative;
+}
+
+#questions {
+	font-size: 10px;
+	color: rgb(147, 147, 147);
+	line-height: 1;
+	margin: 0;
+}
+
+#questions > li {
+	margin: 0.8em 0;
+	cursor: pointer;
+}
+
+.question-active {
+	font-weight: bold;
+	color: black;
+}
