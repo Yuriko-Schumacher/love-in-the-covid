@@ -5,55 +5,113 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/swiper/swiper-bundle.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		/>
 		<title>Love in the time of COVID-19</title>
 	</head>
 	<body>
-		<section class="title">
-			<div class="title__container">
-				<img src="assets/logo.svg" alt="" width="300" />
-				<ul class="byline">
-					<li>Roberto Patterson</li>
-					<li>Yuriko Schumacher</li>
-					<li>Bridget Conway</li>
-					<li>Brennan Kauffman</li>
-				</ul>
-				<article class="title__intro">
-					<p>
-						The dating app industry has seen a drastic surge in
-						2020. What has motivated young adults to turn to the
-						dating apps during the pandemic?
-					</p>
-					<p>
-						Stories of people who would normally be dating if not
-						the pandemic.
-					</p>
-				</article>
+		<!-- Swiper -->
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" id="title">
+					<section>
+						<div class="title__container">
+							<div class="title__left">
+								<img
+									class="title__left__img"
+									src="./assets/combo/cam.png"
+									alt="Cameron Hager"
+								/>
+								<img
+									class="title__left__img"
+									src="./assets/combo/emma.png"
+									alt="Emma Hoey"
+								/>
+								<img
+									class="title__left__img"
+									src="./assets/combo/thao.png"
+									alt="Thao Tran"
+								/>
+							</div>
+							<div class="title__right">
+								<div class="title__right__container">
+									<h1 class="title__headline">
+										Swipes over Swabs
+									</h1>
+									<ul class="byline">
+										<li>Roberto Patterson</li>
+										<li>Yuriko Schumacher</li>
+										<li>Bridget Conway</li>
+										<li>Brennan Kauffman</li>
+									</ul>
+									<article class="title__intro">
+										<p>
+											The dating app industry has seen a
+											drastic surge in 2020.
+										</p>
+										<p>
+											Stories of people who would normally
+											be dating if not the pandemic.
+										</p>
+										<i class="fas fa-chevron-down"></i>
+									</article>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+				<div class="swiper-slide" id="intro">
+					<section>
+						<article>
+							<p>
+								Six feet apart. Masks on. Disinfect. It has been
+								a year since the pandemic has pushed people out
+								of arm’s reach.
+							</p>
+							<p>
+								This persistent distance and isolation has laid
+								new pressures on people’s shoulders and tested
+								the limits of once reliable social safety nets.
+								Limiting avenues of self validation through
+								in-person interpersonal connections.
+							</p>
+							<p>
+								Even with technology bolstering the bridges
+								between friends and family, for some, those
+								connections wore thin as time wore on and
+								created demand for something more substantial.
+								Something more that could potentially be found
+								through a window to the world framed by dating
+								applications.
+							</p>
+							<p>
+								The pandemic has created a new sort of
+								isolation, a new sort of loneliness. Connecting
+								with friends online or on the phone had, prior
+								to the pandemic, been complimented by hanging
+								out in person.
+							</p>
+						</article>
+					</section>
+				</div>
+				<div class="swiper-slide">Slide 3</div>
+				<div class="swiper-slide">Slide 4</div>
 			</div>
-		</section>
-		<section class="intro">
-			<article>
-				<p>
-					Six feet apart. Masks on. Disinfect. It has been a year
-					since the pandemic has pushed people out of arm’s reach.
-					This persistent distance and isolation has laid new
-					pressures on people’s shoulders and tested the limits of
-					once reliable social safety nets. Limiting avenues of self
-					validation through in-person interpersonal connections.
-				</p>
-				<p>
-					Even with technology bolstering the bridges between friends
-					and family, for some, those connections wore thin as time
-					wore on and created demand for something more substantial.
-					Something more that could potentially be found through a
-					window to the world framed by dating applications.
-				</p>
-				<p>
-					The pandemic has created a new sort of isolation, a new sort
-					of loneliness. Connecting with friends online or on the
-					phone had, prior to the pandemic, been complimented by
-					hanging out in person.
-				</p>
-			</article>
-		</section>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+		</div>
+
+		<section id="part-1"></section>
+		<section id="part-2"></section>
+		<section id="part-3"></section>
+		<section id="data"></section>
+		<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+		<script src="scripts/script.js"></script>
 	</body>
 </html>

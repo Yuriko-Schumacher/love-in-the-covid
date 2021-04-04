@@ -1,5 +1,5 @@
 /* ----------------------  LOAD FONTS FROM SERVER ------------------------------ */
-
+/* 
 @font-face {
 	font-family: "GrotzecCond-Demibold";
 	src: url(https://mediainnovation.camd.northeastern.edu/2021/loveinthetimeofcovid/fonts/GrotzecCond-Demibold3.woff2);
@@ -18,6 +18,23 @@
 @font-face {
 	font-family: "LeJeunePoster-RegularItalic";
 	src: url(https://mediainnovation.camd.northeastern.edu/2021/loveinthetimeofcovid/fonts/LeJeunePoster-RegularItalic.otf);
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* ----- SET COLOR VARIABLES ----- */
+
+:root {
+	--yellow: #fed527;
+	--dark-yellow: #b3940d;
+	--navy: #0001b3;
+	--dark-navy: #000066;
+	--pink: #ff0dd9;
+	--font-main: #3e3d3d;
+	--font-sub: #747272;
+	--background-gray: #edebeb;
+	--serif: "PT Serif", serif;
+	--sans-serif: "PT Sans", sans-serif;
 }
 
 /* ----------------------  BASIC CSS FOR MY STORY ------------------------------ */
@@ -26,9 +43,25 @@
 	box-sizing: border-box;
 }
 
+html,
+body {
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	font-size: 16px;
+	color: var(--font-main);
+}
+
 h1,
 h2 {
-	font-family: "GrotzecCond-Demibold", sans-serif;
+	font-family: var(--sans-serif);
+}
+
+.title__headline {
+	margin: 0 auto;
+	font-size: 5em;
+	line-height: 1;
+	text-align: center;
 }
 
 ul {
@@ -37,32 +70,68 @@ ul {
 }
 
 p {
-	font-family: "LeJeunePoster-Regular";
-	font-size: 18px;
+	font-family: var(--serif);
 	line-height: 1.2;
 }
 
-.byline {
-	font-family: "GrotzecCond-Demibold";
-	text-align: center;
-	margin: 2em;
-}
-
 article {
-	width: 80%;
-	max-width: 800px;
+	width: 60%;
+	max-width: 600px;
 	margin: 0 auto;
 }
 
-.title__container {
+.swiper-container {
+	width: 100%;
 	height: 100vh;
+}
+
+.swiper-slide {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* ---------- #title ---------- */
+
+#title {
+	display: block;
+}
+
+.title__container {
+	display: flex;
+}
+
+.title__container > * {
+	height: 100vh;
+	width: 50%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
+.title__left {
+	background: var(--background-gray);
+}
+
+.title__left__img {
+	width: 60%;
+}
+
+.title__right__container {
+	width: 90%;
+}
+
+.byline {
+	/* font-family: "GrotzecCond-Demibold"; */
+	font-family: "PT Sans", sans-serif;
+	text-align: center;
+	margin: 2em;
+}
+
 .title__intro {
 	width: 50%;
 	text-align: center;
 }
+
+/* ---------- #title ---------- */
