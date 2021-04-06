@@ -191,7 +191,7 @@ h4 {
 #match-stock,
 #survey {
 	height: 300px;
-	width: 80%;
+	width: 950px;
 	max-width: 1000px;
 	position: relative;
 }
@@ -211,4 +211,12 @@ h4 {
 .question-active {
 	font-weight: bold;
 	color: black;
+}
+
+path.domain {
+	display: none;
+}
+
+.x-axis > .tick > line {
+	display: none;
 }

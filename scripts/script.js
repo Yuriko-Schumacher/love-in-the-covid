@@ -49,7 +49,6 @@ const horizontalSwiperSlides = [
 ];
 
 d3.selectAll(".swiper-container").on("click", function () {
-	console.log(d3.select("#part-1").classed("swiper-slide-active"));
 	if (d3.select("#part-1").classed("swiper-slide-active") == true) {
 		console.log(paginationV);
 		paginationV.style("display", "none");
