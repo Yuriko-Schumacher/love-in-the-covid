@@ -13,59 +13,107 @@
 			rel="stylesheet"
 			href="https://unpkg.com/swiper/swiper-bundle.min.css"
 		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://mediainnovation.camd.northeastern.edu/2021/loveinthetimeofcovid/css/loveinthetimeofcovid.css"
+		/>
 
 		<title>Love in the time of COVID-19</title>
 	</head>
 	<body>
+		<!-- ----------------------- Main page content -------------------------- -->
 		<!-- Swiper -->
 		<div class="swiper-container swiper-container-v">
 			<div class="swiper-wrapper">
+				<!-- ---------- NAV BAR ---------- -->
+				<!-- <div class="nav">
+					<nav role="navigation" class="essential-nav">
+						<div id="menuToggle">
+							<!--
+        A fake / hidden checkbox is used as click reciever,
+        so you can use the :checked selector on it.
+        -->
+				<!-- <input type="checkbox" /> -->
+				<!--
+        Some spans to act as a hamburger.
+        -->
+				<!-- <span></span>
+							<span></span>
+							<span></span>
+							<ul id="menu">
+								<a href="swipes-over-swabs/index.html"
+									><li>Swipes Over Swabs</li></a
+								>
+								<a
+									href="pregnancy-during-the-pandemic/index.html"
+									><li>Pregnancy During the Pandemic</li></a
+								>
+								<a
+									href="love-during-the-loneliness-virus/index.html"
+									><li>
+										Love During the "Loneliness Virus"
+									</li></a
+								>
+							</ul>
+						</div>
+						<a href="../index.html">
+							<div
+								style="
+									width: 50%;
+									margin: -20px auto 0 auto;
+									height: 50px;
+								"
+							></div>
+						</a>
+					</nav>
+				</div> -->
+
+				<!-- ---------- NAV BAR END ---------- -->
 				<div class="swiper-slide" id="title">
-					<section>
-						<div class="title__container">
-							<div class="title__left">
-								<img
-									class="title__left__img"
-									src="./assets/combo/cam2.png"
-									alt="Cameron Hager"
-								/>
-								<img
-									class="title__left__img"
-									src="./assets/combo/emma2.png"
-									alt="Emma Hoey"
-								/>
-								<img
-									class="title__left__img"
-									src="./assets/combo/thao2.png"
-									alt="Thao Tran"
-								/>
-							</div>
-							<div class="title__right">
-								<div class="title__right__container">
-									<h1 class="title__headline">
-										Swipes over Swabs
-									</h1>
-									<ul class="byline">
-										<li>Roberto Patterson</li>
-										<li>Yuriko Schumacher</li>
-										<li>Bridget Conway</li>
-										<li>Brennan Kauffman</li>
-									</ul>
-									<article class="title__intro">
-										<p>
-											The dating app industry has seen a
-											drastic surge in 2020.
-										</p>
-										<p>
-											Stories of people who would normally
-											be dating if not the pandemic.
-										</p>
-										<i class="fas fa-chevron-down"></i>
-									</article>
-								</div>
+					<div class="title__container">
+						<div class="title__left">
+							<img
+								class="title__left__img"
+								src="./assets/combo/cam2.png"
+								alt="Cameron Hager"
+							/>
+							<img
+								class="title__left__img"
+								src="./assets/combo/emma2.png"
+								alt="Emma Hoey"
+							/>
+							<img
+								class="title__left__img"
+								src="./assets/combo/thao2.png"
+								alt="Thao Tran"
+							/>
+						</div>
+						<div class="title__right">
+							<div class="title__right__container">
+								<h1 class="title__headline">
+									Swipes over Swabs
+								</h1>
+								<ul class="byline">
+									<li>Roberto Patterson</li>
+									<li>Yuriko Schumacher</li>
+									<li>Bridget Conway</li>
+									<li>Brennan Kauffman</li>
+								</ul>
+								<article class="title__intro">
+									<p>
+										The dating app industry has seen a
+										drastic surge in 2020.
+									</p>
+									<p>
+										Stories of people who would normally be
+										dating if not the pandemic.
+									</p>
+									<i class="fas fa-chevron-down"></i>
+								</article>
 							</div>
 						</div>
-					</section>
+					</div>
 				</div>
 				<div class="swiper-slide" id="intro">
 					<article>
@@ -98,13 +146,10 @@
 					<div class="swiper-container swiper-container-h">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
-								<ul class="part-title">
-									<li>PART 1</li>
-									<li>
-										<h2>Fighting with loneliness</h2>
-									</li>
-								</ul>
-								<article>
+								<div class="part-title__container">
+									<h1 class="part-title">
+										Fighting with loneliness
+									</h1>
 									<p>
 										The pandemic has created a new sort of
 										isolation, a new sort of loneliness.
@@ -121,7 +166,7 @@
 										incomplete, exposing the limits of
 										online connectivity.
 									</p>
-								</article>
+								</div>
 							</div>
 							<div class="swiper-slide">Horizontal Slide 2</div>
 							<div class="swiper-slide">Horizontal Slide 3</div>
@@ -134,13 +179,10 @@
 					<div class="swiper-container swiper-container-h">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
-								<ul class="part-title">
-									<li>PART 2</li>
-									<li>
-										<h2>Risk of meeting new people</h2>
-									</li>
-								</ul>
-								<article>
+								<div class="part-title__container">
+									<h1 class="part-title">
+										Risk of meeting new people
+									</h1>
 									<p>
 										INTRO TO PART TWO ----- Lorem ipsum
 										dolor sit amet, consectetur adipisicing
@@ -150,7 +192,7 @@
 										molestias provident vel voluptates,
 										illum laudantium expedita ex? Ad.
 									</p>
-								</article>
+								</div>
 							</div>
 							<div class="swiper-slide">Horizontal Slide 2</div>
 							<div class="swiper-slide">Horizontal Slide 3</div>
@@ -163,15 +205,11 @@
 					<div class="swiper-container swiper-container-h">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
-								<ul class="part-title">
-									<li>PART 3</li>
-									<li>
-										<h2>
-											Revalidating other relationships
-										</h2>
-									</li>
-								</ul>
-								<article>
+								<div class="part-title__container">
+									<h1 class="part-title">
+										Revalidating other relationships
+									</h1>
+
 									<p>
 										INTRO TO PART THREE ----- Lorem ipsum
 										dolor sit amet, consectetur adipisicing
@@ -181,7 +219,7 @@
 										molestias provident vel voluptates,
 										illum laudantium expedita ex? Ad.
 									</p>
-								</article>
+								</div>
 							</div>
 							<div class="swiper-slide">Horizontal Slide 2</div>
 							<div class="swiper-slide">Horizontal Slide 3</div>
@@ -209,6 +247,29 @@
 			<div class="swiper-prev-v"></div>
 			<!-- Add Pagination -->
 			<div class="swiper-pagination swiper-pagination-v"></div>
+			<!-- ------------------------------Footer -------------------------------- -->
+			<p
+				style="
+					text-align: center;
+					padding: 30px 0;
+					font-family: 'Helvetica';
+				"
+			>
+				Produced by students of the Media Innovation masters' program at
+				the
+				<a
+					href="https://camd.northeastern.edu/journalism-at-northeastern/"
+					style="text-decoration: underline"
+					>Northeastern University School of Journalism.</a
+				>
+				&#169; 2021
+			</p>
+			<h5 style="border-top: none; margin-top: -2%; text-align: center">
+				<img
+					src="https://mediainnovation.camd.northeastern.edu/2021/loveinthetimeofcovid/images/seal_logotype-768x252.png"
+					width="300px"
+				/>
+			</h5>
 		</div>
 
 		<script src="https://d3js.org/d3.v6.min.js"></script>

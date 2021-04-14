@@ -166,6 +166,7 @@ d3.csv("data/survey-cleaned.csv").then(function (data) {
 				(el) => el === clickedQuestion
 			);
 			xAxis.remove();
+			xAxis2.remove();
 			changeViz(data, questionIndex);
 		});
 });
@@ -218,9 +219,12 @@ function selectQuestion(data, index) {
 
 function drawNodes(data, index, options) {
 	// create scale
+	let filteredOption = options.filter((el) => el.length >= 2);
+	console.log(filteredOption.map((el) => el[1].length));
+
 	xScale = d3
 		.scaleBand()
-		.domain(options.map((el) => el[0]))
+		.domain(filteredOption.map((el) => el[0]))
 		.range([margin.left, width - margin.right]);
 
 	xAxis = containerG
@@ -229,23 +233,17 @@ function drawNodes(data, index, options) {
 		.call(d3.axisBottom(xScale))
 		.attr("transform", `translate(0, ${height - margin.bottom + 10})`);
 
-	let xScale2 = d3
-		.scaleBand()
-		.domain([
-			"65 (31.9%)",
-			"80 (39.2%)",
-			"12 (5.9%)",
-			"44 (21.6%)",
-			"2 (1%)",
-			"1 (0.5%)",
-		])
-		.range([margin.left, width - margin.right]);
-
-	// containerG
-	// 	.append("g")
-	// 	.classed("x-axis", true)
-	// 	.call(d3.axisTop(xScale2))
-	// 	.attr("transform", `translate(0, 60)`);
+	xAxis2 = containerG
+		.append("g")
+		.classed("x-axis", true)
+		.call(
+			d3.axisTop(xScale).tickFormat((d, i) => {
+				let num = filteredOption[i][1].length;
+				let percentage = Math.round((num / 204) * 100 * 10) / 10;
+				return `${num} (${percentage}%)`;
+			})
+		)
+		.attr("transform", `translate(0, 60)`);
 
 	let thisQ = Object.keys(QandA)[index];
 

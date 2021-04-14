@@ -1,5 +1,5 @@
 /* ----------------------  LOAD FONTS FROM SERVER ------------------------------ */
-/* 
+
 @font-face {
 	font-family: "GrotzecCond-Demibold";
 	src: url(https://mediainnovation.camd.northeastern.edu/2021/loveinthetimeofcovid/fonts/GrotzecCond-Demibold3.woff2);
@@ -18,7 +18,7 @@
 @font-face {
 	font-family: "LeJeunePoster-RegularItalic";
 	src: url(https://mediainnovation.camd.northeastern.edu/2021/loveinthetimeofcovid/fonts/LeJeunePoster-RegularItalic.otf);
-} */
+}
 
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
@@ -36,7 +36,13 @@
 	--background-gray: #edebeb;
 	--serif: "PT Serif", serif;
 	--sans-serif: "PT Sans", sans-serif;
+	--grotzec: "GrotzecCond-Demibold";
+	--grotzec-italic: "GrotzecCond-DemiboldItalic";
+	--lejeune: "LeJeunePoster-Regular";
+	--lejeune-italic: "LeJeunePoster-RegularItalic";
 }
+
+/* ---------- NAV BAR ---------- */
 
 /* ----------------------  BASIC CSS FOR MY STORY ------------------------------ */
 
@@ -55,7 +61,7 @@ body {
 
 h1,
 h2 {
-	font-family: var(--sans-serif);
+	font-family: var(--grotzec), var(--sans-serif);
 }
 
 .title__headline {
@@ -77,9 +83,11 @@ p {
 
 article {
 	width: 60%;
-	max-width: 45ch;
+	max-width: 800px;
 	margin: 0 auto;
 }
+
+/* ---------- SWIPER ---------- */
 
 .swiper-container {
 	width: 100%;
@@ -150,8 +158,13 @@ article {
 
 /* ---------- #part-1 ---------- */
 
+.part-title__container {
+	width: 60%;
+	max-width: 600px;
+	padding: 2em;
+}
+
 .part-title {
-	margin: 0;
 }
 
 #part-1 {
