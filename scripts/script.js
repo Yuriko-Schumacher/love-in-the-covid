@@ -43,6 +43,7 @@ const swiperIntro = new Swiper(".swiper-container-v", {
 });
 
 const swiperPartSwitch = new Swiper(".swiper-container-partSwitch", {
+	freeMode: true,
 	navigation: {
 		nextEl: ".swiper-next-h",
 		prevEl: ".swiper-prev-h",
