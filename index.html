@@ -12,11 +12,11 @@
 			rel="stylesheet"
 			href="https://unpkg.com/swiper/swiper-bundle.min.css"
 		/>
-		<link
+		<!-- <link
 			rel="stylesheet"
 			type="text/css"
 			href="https://mediainnovation.camd.northeastern.edu/2021/loveinthetimeofcovid/css/loveinthetimeofcovid.css"
-		/>
+		/> -->
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<script src="https://d3js.org/d3.v6.min.js"></script>
 		<script src="https://unpkg.com/enter-view"></script>
@@ -334,7 +334,60 @@
 								</p>
 							</article>
 						</div>
-						<div id="survey__loneliness">SCROLLY?</div>
+						<div class="scrolly__container">
+							<figure
+								id="survey__loneliness"
+								class="scrolly__sticky"
+							>
+								<div id="question__loneliness" class="question">
+									<p></p>
+								</div>
+							</figure>
+							<div class="scrolly__article">
+								<div
+									class="survey__loneliness__step step"
+									data-index="-1"
+								>
+									<p>
+										In a survey of 204 people between the
+										ages of 18 and 29,
+									</p>
+								</div>
+								<div
+									class="survey__loneliness__step step"
+									data-index="0"
+								>
+									<p>
+										<span class="hotpink-highlighter"
+											>64%</span
+										>
+										reported dealing with negative emotions
+										more often than they had prior to the
+										pandemic.
+									</p>
+									<p>
+										<span class="pink-highlighter"
+											>Almost all</span
+										>
+										said they have experienced increased
+										loneliness as the pandemic has gone on.
+									</p>
+								</div>
+								<div
+									class="survey__loneliness__step step"
+									data-index="1"
+								>
+									<p>
+										<span class="hotpink-highlighter"
+											>145 people (71.0%)</span
+										>
+										said that their desire to connect with
+										people had increased over the course of
+										the pandemic.
+									</p>
+								</div>
+							</div>
+						</div>
 						<div id="financial-results">
 							<article>
 								<p>
@@ -443,7 +496,7 @@
 						<div class="part-title-container">
 							<h1>Is the risk of meeting new people worth it?</h1>
 							<p>
-								Yet even as young people flock to dating apps,
+								Even as young people flock to dating apps,
 								health concerns are never far from the front of
 								users’ minds.
 							</p>
@@ -472,7 +525,42 @@
 						</div>
 					</div>
 					<div id="part-2__main" class="part__main">
-						<div id="survey__risk">SCROLLY?</div>
+						<div class="scrolly__container">
+							<figure id="survey__risk" class="scrolly__sticky">
+								<div id="question__risk" class="question">
+									<p></p>
+								</div>
+							</figure>
+							<div class="scrolly__article">
+								<div
+									class="survey__risk__step step"
+									data-index="4"
+								>
+									<p>
+										Before the pandemic,
+										<span class="hotpink-highlighter"
+											>63%</span
+										>
+										of respondents said that it was very
+										important that they knew a potential
+										match was STI-free.
+									</p>
+								</div>
+								<div
+									class="survey__risk__step step"
+									data-index="5"
+								>
+									<p>
+										By comparison,
+										<span class="hotpink-highlighter"
+											>almost 55% (111 in total)</span
+										>
+										of respondents said that they would take
+										someone’s word about being COVID free.
+									</p>
+								</div>
+							</div>
+						</div>
 						<div id="bridge__from-survey-to-emma">
 							<article>
 								<p>
@@ -739,9 +827,9 @@
 								</p>
 							</article>
 						</div>
-						<div id="survey__relationship">SCROLLY?</div>
 						<div id="thao">
 							<article>
+								<h2>Trapped by dating apps</h2>
 								<p>
 									Dating apps were the “only avenue to meet
 									people” and “only source of validation,” for
@@ -836,6 +924,50 @@
 									Valentine’s Day cards,” she said.
 								</p>
 							</article>
+						</div>
+						<div class="scrolly__container">
+							<figure
+								id="survey__relationship"
+								class="scrolly__sticky"
+							>
+								<div
+									id="question__relationship"
+									class="question"
+								>
+									<p></p>
+								</div>
+							</figure>
+							<div class="scrolly__article">
+								<div
+									class="survey__relationship__step step"
+									data-index="2"
+								>
+									<p>
+										In our survey of 204 young people,
+										<span class="hotpink-highlighter"
+											>130 respondents (63.7%)</span
+										>
+										answered it is important for their
+										friends and family to acknowledge their
+										negative feelings when they feel lonely.
+									</p>
+								</div>
+								<div
+									class="survey__relationship__step step"
+									data-index="3"
+								>
+									<p>
+										Conversely,
+										<span class="hotpink-highlighter"
+											>more than half (110 people,
+											53.9%)</span
+										>
+										of the respondents said their ability to
+										be happy while alone has been increased
+										due to the pandemic.
+									</p>
+								</div>
+							</div>
 						</div>
 						<div id="kacey">
 							<article>
@@ -962,7 +1094,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- Add Arrows -->
 			<div class="swiper-button-next swiper-next-h"></div>
 			<div class="swiper-button-prev swiper-prev-h"></div>
 		</div>
@@ -989,8 +1120,8 @@
 				width="300px"
 			/>
 		</h5>
-
 		<script src="scripts/script.js"></script>
+		<script src="scripts/surveyResults.js"></script>
 		<script src="scripts/audio.js"></script>
 	</body>
 </html>

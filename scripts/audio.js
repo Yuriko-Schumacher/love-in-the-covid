@@ -73,55 +73,67 @@ const audioThaoText = [
 ];
 
 // click to activate audio autoplay
-let isMuted = false;
+let isMuted = true;
 audioMute.onclick = () => {
-	if (!isMuted) {
-		audioMute.src = "audio/speaker-button.png";
-		audioCamMute.src = "audio/speaker-button.png";
-		audioEmmaMute.src = "audio/speaker-button.png";
-		audioThaoMute.src = "audio/speaker-button.png";
-		audioMuteText.innerText = "Click to deactivate audio autoplay";
-		audioCam.muted = true;
-		audioEmma.muted = true;
-		audioThao.muted = true;
-		isMuted = true;
+	if (isMuted) {
+		// mute されている状態　→　音を出す
+		unmute();
 	} else {
-		audioMute.src = "audio/mute-button.svg";
-		audioCamMute.src = "audio/mute-button.svg";
-		audioEmmaMute.src = "audio/mute-button.svg";
-		audioThaoMute.src = "audio/mute-button.svg";
-		audioMuteText.innerText = "Click to activate audio autoplay";
-		audioCam.muted = true;
-		audioEmma.muted = true;
-		audioThao.muted = true;
-		isMuted = false;
+		// 音が出る状態
+		mute();
 	}
 };
 
-toggleAudioAndQuote("cam", "1", audioCam, audioCamText, audioCamMute);
-toggleAudioAndQuote("emma", "2", audioEmma, audioEmmaText, audioEmmaMute);
-toggleAudioAndQuote("thao", "3", audioThao, audioThaoText, audioThaoMute);
+function unmute() {
+	audioMute.src = "audio/speaker-button.png";
+	audioCamMute.src = "audio/speaker-button.png";
+	audioEmmaMute.src = "audio/speaker-button.png";
+	audioThaoMute.src = "audio/speaker-button.png";
+	audioMuteText.innerText = "Click to deactivate audio autoplay";
+	audioCam.muted = false;
+	audioEmma.muted = false;
+	audioThao.muted = false;
+	isMuted = false;
+}
+
+function mute() {
+	audioMute.src = "audio/mute-button.svg";
+	audioCamMute.src = "audio/mute-button.svg";
+	audioEmmaMute.src = "audio/mute-button.svg";
+	audioThaoMute.src = "audio/mute-button.svg";
+	audioMuteText.innerText = "Click to activate audio autoplay";
+	audioCam.muted = true;
+	audioEmma.muted = true;
+	audioThao.muted = true;
+	isMuted = true;
+}
+
+toggleAudioAndQuote("cam", 0, audioCam, audioCamText, audioCamMute);
+toggleAudioAndQuote("emma", 1, audioEmma, audioEmmaText, audioEmmaMute);
+toggleAudioAndQuote("thao", 2, audioThao, audioThaoText, audioThaoMute);
 
 function toggleAudioAndQuote(name, partNum, audioEl, textEl, muteEl) {
 	enterView({
 		selector: `#quote__${name}`,
 		enter: function () {
-			let thisPart = document.querySelector(`#part-${partNum}`);
-			let thisPartClassList = Array.from(thisPart.classList);
-			let isThisPartActive = thisPartClassList.includes(
-				"swiper-slide-active"
-			);
-
-			if (isThisPartActive) {
+			let activeIndex = isActive.findIndex((el) => el === true);
+			if (activeIndex === partNum) {
 				if (isMuted) {
+					audioEl.muted = true;
+					textEl.forEach((el) => {
+						setTimeout(function () {
+							el.el.classList.add("quote__text__active");
+						}, el.delay);
+					});
+				} else {
 					audioEl.muted = false;
+					audioEl.play();
+					textEl.forEach((el) => {
+						setTimeout(function () {
+							el.el.classList.add("quote__text__active");
+						}, el.delay);
+					});
 				}
-				audioEl.play();
-				textEl.forEach((el) => {
-					setTimeout(function () {
-						el.el.classList.add("quote__text__active");
-					}, el.delay);
-				});
 			}
 		},
 		exit: function () {
@@ -135,25 +147,26 @@ function toggleAudioAndQuote(name, partNum, audioEl, textEl, muteEl) {
 
 	muteEl.onclick = () => {
 		if (!isMuted) {
-			audioEl.muted = true;
-			muteEl.src = "audio/mute-button.svg";
-			isMuted = true;
+			mute();
 		} else {
-			audioEl.muted = false;
-			muteEl.src = "audio/speaker-button.png";
-			isMuted = false;
+			unmute();
+			audioEl.play();
+			textEl.forEach((el) =>
+				el.el.classList.remove("quote__text__active")
+			);
+			textEl.forEach((el) => {
+				setTimeout(function () {
+					el.el.classList.add("quote__text__active");
+				}, el.delay);
+			});
 		}
 	};
 
 	enterView({
 		selector: `#audio__${name}__mute`,
 		enter: function () {
-			let thisPart = document.querySelector(`#part-${partNum}`);
-			let thisPartClassList = Array.from(thisPart.classList);
-			let isThisPartActive = thisPartClassList.includes(
-				"swiper-slide-active"
-			);
-			if (isThisPartActive) {
+			let activeIndex = isActive.findIndex((el) => el === true);
+			if (activeIndex === partNum) {
 				audioEl.muted = true;
 				muteEl.src = "audio/mute-button.svg";
 				textEl.forEach((el) => {

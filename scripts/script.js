@@ -27,7 +27,7 @@ while (i < 3) {
 
 enterView({
 	selector: ".title-text__3",
-	enter: function (el) {
+	enter: (el) => {
 		el.classList.add("active");
 	},
 	offset: 0.3,
@@ -40,47 +40,29 @@ const swiperPartSwitch = new Swiper(".swiper-container-partSwitch", {
 	},
 	resistance: false,
 });
+const partSwitchEl = document.querySelector(".swiper-container-partSwitch");
+const part1El = partSwitchEl.querySelector("#part-1");
+const part2El = partSwitchEl.querySelector("#part-2");
+const part3El = partSwitchEl.querySelector("#part-3");
+let currentPartEl = partSwitchEl.querySelector(".swiper-slide-active");
+let isActive = [true, false, false];
+const audioEl = partSwitchEl.querySelectorAll("audio");
+
+swiperPartSwitch.on("slideChangeTransitionEnd", () => {
+	currentPartEl = partSwitchEl.querySelector(".swiper-slide-active");
+	isActive[0] = part1El === currentPartEl ? true : false;
+	isActive[1] = part2El === currentPartEl ? true : false;
+	isActive[2] = part3El === currentPartEl ? true : false;
+	Array.from(audioEl).forEach((el) => el.pause());
+	window.location.href = "#part-1";
+	console.log(isActive);
+});
 
 // ---------- SMOOTH SCROLLING ----------
 enterView({
 	selector: "#part-1",
-	enter: function (el) {
+	enter: () => {
 		window.location.href = "#part-1";
 	},
 	offset: 0.6,
 });
-
-// // ---------- STYLE HORIZONTAL SWIPER NAV ---------- //
-// const horizontalSwiperNavs = [
-// 	d3.select(".swiper-prev-h"),
-// 	d3.select(".swiper-next-h"),
-// ];
-
-// horizontalSwiperNavs.forEach((div) => styleSwiperNav(div));
-
-// function styleSwiperNav(div) {
-// 	div.on("mouseover", function () {
-// 		let thisDiv = d3.select(this);
-// 		if (thisDiv.classed("swiper-button-disabled") == false) {
-// 			thisDiv.style("opacity", 1).style("cursor", "pointer");
-// 		}
-// 	}).on("mouseout", function () {
-// 		d3.select(this).style("opacity", 0.5).style("cursor", "default");
-// 	});
-// }
-
-// // ---------- REMOVE VERTICAL ELEMENTS WHEN SWIPING HORIZONTALLY ----------
-// const paginationV = d3.select(".swiper-pagination-v");
-// const horizontalSwiperSlides = [
-// 	d3.select("#part-1"),
-// 	d3.select("#part-2"),
-// 	d3.select("#part-3"),
-// ];
-
-// d3.selectAll(".swiper-container").on("click", function () {
-// 	if (d3.select("#part-1").classed("swiper-slide-active") == true) {
-// 		paginationV.style("display", "none");
-// 	} else {
-// 		paginationV.style("display", "block");
-// 	}
-// });
