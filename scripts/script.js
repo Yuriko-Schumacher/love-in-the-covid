@@ -4,7 +4,7 @@ const swiperAutoplay = new Swiper("div.swiper-container-autoplay", {
 	centeredSlides: true,
 	loop: true,
 	autoplay: {
-		delay: 5000,
+		delay: 3000,
 		disableOnInteraction: true,
 	},
 	autoplayStop: d3.select("p#stop-auto-swipe").on("click", function () {

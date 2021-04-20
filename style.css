@@ -190,7 +190,7 @@ article {
 	text-align: center;
 	opacity: 0;
 	width: 60%;
-	margin: 2em auto 5em;
+	margin: 2em auto 6em;
 }
 
 .active {
@@ -330,15 +330,15 @@ article {
 }
 
 #part-1 {
-	border-left: 50px solid var(--dark-navy);
+	border-left: 50px solid var(--navy);
 }
 
 #part-2 {
-	border-left: 50px solid var(--dark-pink);
+	border-left: 50px solid var(--pink);
 }
 
 #part-3 {
-	border-left: 50px solid var(--dark-yellow);
+	border-left: 50px solid var(--yellow);
 }
 
 .quote {
@@ -390,6 +390,16 @@ article {
 	margin: 0;
 	font-size: 14px;
 	text-align: right;
+}
+
+/* ---------- PART END ---------- */
+.part__end {
+	width: 100%;
+	height: 100vh;
+}
+
+#part-1__end {
+	background: var(--dark-navy);
 }
 
 /* ---------- DATA VIZ --------- */

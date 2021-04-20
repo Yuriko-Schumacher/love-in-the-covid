@@ -81,6 +81,9 @@ audioMute.onclick = () => {
 		audioEmmaMute.src = "audio/speaker-button.png";
 		audioThaoMute.src = "audio/speaker-button.png";
 		audioMuteText.innerText = "Click to deactivate audio autoplay";
+		audioCam.muted = true;
+		audioEmma.muted = true;
+		audioThao.muted = true;
 		isMuted = true;
 	} else {
 		audioMute.src = "audio/mute-button.svg";
@@ -88,6 +91,9 @@ audioMute.onclick = () => {
 		audioEmmaMute.src = "audio/mute-button.svg";
 		audioThaoMute.src = "audio/mute-button.svg";
 		audioMuteText.innerText = "Click to activate audio autoplay";
+		audioCam.muted = true;
+		audioEmma.muted = true;
+		audioThao.muted = true;
 		isMuted = false;
 	}
 };
@@ -107,8 +113,10 @@ function toggleAudioAndQuote(name, partNum, audioEl, textEl, muteEl) {
 			);
 
 			if (isThisPartActive) {
-				audioEl.muted = false;
-				audioEl.play();
+				if (isMuted) {
+					audioEl.muted = false;
+					audioEl.play();
+				}
 				textEl.forEach((el) => {
 					setTimeout(function () {
 						el.el.classList.add("quote__text__active");
