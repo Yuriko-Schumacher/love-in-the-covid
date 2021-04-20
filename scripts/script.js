@@ -36,6 +36,7 @@ const swiperIntro = new Swiper(".swiper-container-v", {
 	direction: "vertical",
 	slidesPerView: "auto",
 	freeMode: true,
+	mousewheel: true,
 	pagination: {
 		el: ".swiper-pagination-v",
 		clickable: true,
