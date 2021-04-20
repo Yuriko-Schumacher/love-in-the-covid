@@ -35,6 +35,7 @@ enterView({
 const swiperIntro = new Swiper(".swiper-container-v", {
 	direction: "vertical",
 	slidesPerView: "auto",
+	freeMode: true,
 	pagination: {
 		el: ".swiper-pagination-v",
 		clickable: true,
