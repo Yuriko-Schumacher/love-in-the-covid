@@ -115,8 +115,8 @@ function toggleAudioAndQuote(name, partNum, audioEl, textEl, muteEl) {
 			if (isThisPartActive) {
 				if (isMuted) {
 					audioEl.muted = false;
-					audioEl.play();
 				}
+				audioEl.play();
 				textEl.forEach((el) => {
 					setTimeout(function () {
 						el.el.classList.add("quote__text__active");
