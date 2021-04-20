@@ -3,6 +3,7 @@ const swiperAutoplay = new Swiper("div.swiper-container-autoplay", {
 	spaceBetween: 20,
 	centeredSlides: true,
 	loop: true,
+	speed: 500,
 	autoplay: {
 		delay: 3000,
 		disableOnInteraction: true,
@@ -32,22 +33,12 @@ enterView({
 	offset: 0.3,
 });
 
-const swiperIntro = new Swiper(".swiper-container-v", {
-	direction: "vertical",
-	slidesPerView: "auto",
-	freeMode: true,
-	mousewheel: true,
-	pagination: {
-		el: ".swiper-pagination-v",
-		clickable: true,
-	},
-});
-
 const swiperPartSwitch = new Swiper(".swiper-container-partSwitch", {
 	navigation: {
 		nextEl: ".swiper-next-h",
 		prevEl: ".swiper-prev-h",
 	},
+	resistance: false,
 });
 
 // ---------- SMOOTH SCROLLING ----------
