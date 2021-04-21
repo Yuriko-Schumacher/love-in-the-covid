@@ -30,7 +30,7 @@ enterView({
 	enter: (el) => {
 		el.classList.add("active");
 	},
-	offset: 0.3,
+	offset: 0.1,
 });
 
 const swiperPartSwitch = new Swiper(".swiper-container-partSwitch", {
