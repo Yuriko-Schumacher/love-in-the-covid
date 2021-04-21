@@ -395,23 +395,24 @@ article {
 /* ---------- FEEDBACK ---------- */
 .feedback {
 	width: 40%;
+	max-width: 300px;
 	font-family: var(--sans-serif);
 	font-size: 0.7em;
 	border: 5px solid var(--background-gray);
 	margin: 4em auto;
-	padding: 2em;
+	padding: 1em;
 	text-align: center;
 }
 
 .feedback__button-and-chart {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-end;
 }
 
 .feedback__button-and-chart > * {
 	flex: 0 0 42%;
-	margin: 0 0.5em;
+	margin: 0.2em 0.5em;
 }
 
 .feedback__no {
@@ -423,12 +424,12 @@ article {
 }
 
 .outer-bar {
-	height: 16px;
+	height: 3px;
 	background: var(--background-gray);
 }
 
 .inner-bar {
-	height: 16px;
+	height: 3px;
 	transition: width 0.5s ease-in-out;
 }
 
