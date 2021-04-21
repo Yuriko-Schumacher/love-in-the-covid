@@ -236,6 +236,9 @@ article {
 		height: 40vw;
 		max-width: unset;
 	}
+	.title-text__main {
+		font-size: 4em;
+	}
 	.title-text__1,
 	.title-text__2 {
 		line-height: 1;

@@ -88,7 +88,10 @@ function BubbleChart() {
 			.append("g")
 			.classed("circles", true)
 			.attr("stroke", "lightgray")
-			.attr("stroke-width", 1)
+			.attr(
+				"stroke-width",
+				windowSize.w >= 800 ? 1 : (windowSize.w / 800) * 1
+			)
 			.selectAll("circle")
 			.data(this._data)
 			.join("circle")
