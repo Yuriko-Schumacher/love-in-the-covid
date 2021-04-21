@@ -38,14 +38,15 @@ const swiperPartSwitch = new Swiper(".swiper-container-partSwitch", {
 		nextEl: ".swiper-next-h",
 		prevEl: ".swiper-prev-h",
 	},
-	resistance: false,
 });
 const partSwitchEl = document.querySelector(".swiper-container-partSwitch");
+const partsEl = partSwitchEl.querySelectorAll(".swiper-slide");
 const part1El = partSwitchEl.querySelector("#part-1");
 const part2El = partSwitchEl.querySelector("#part-2");
 const part3El = partSwitchEl.querySelector("#part-3");
 let currentPartEl = partSwitchEl.querySelector(".swiper-slide-active");
 let isActive = [true, false, false];
+let activeIndex = 0;
 const audioEl = partSwitchEl.querySelectorAll("audio");
 
 swiperPartSwitch.on("slideChangeTransitionEnd", () => {
@@ -53,9 +54,10 @@ swiperPartSwitch.on("slideChangeTransitionEnd", () => {
 	isActive[0] = part1El === currentPartEl ? true : false;
 	isActive[1] = part2El === currentPartEl ? true : false;
 	isActive[2] = part3El === currentPartEl ? true : false;
+	activeIndex = isActive.findIndex((el) => el === true);
+	Array.from(partsEl)[activeIndex].classList.remove("swiper-slide-hidden");
 	Array.from(audioEl).forEach((el) => el.pause());
 	window.location.href = "#part-1";
-	console.log(isActive);
 });
 
 // ---------- SMOOTH SCROLLING ----------
@@ -64,5 +66,5 @@ enterView({
 	enter: () => {
 		window.location.href = "#part-1";
 	},
-	offset: 0.6,
+	offset: 0.7,
 });

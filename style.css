@@ -61,7 +61,7 @@ body {
 	padding: 0px;
 	font-size: 18px;
 	color: var(--font-main);
-	scroll-behavior: smooth;
+	/* scroll-behavior: smooth; */
 }
 
 a:link,
@@ -215,11 +215,6 @@ article {
 }
 
 /* ---------- PART SWITCH ---------- */
-
-.swiper-container-partSwitch {
-	overflow: visible;
-}
-
 .swiper-next-h,
 .swiper-prev-h {
 	color: white;
@@ -335,6 +330,7 @@ article {
 
 #part-1 {
 	border-left: 50px solid var(--navy);
+	overflow: visible;
 }
 
 #part-2 {
@@ -396,28 +392,183 @@ article {
 	text-align: right;
 }
 
+/* ---------- FEEDBACK ---------- */
+.feedback {
+	width: 40%;
+	font-family: var(--sans-serif);
+	font-size: 0.7em;
+	border: 5px solid var(--background-gray);
+	margin: 4em auto;
+	padding: 2em;
+	text-align: center;
+}
+
+.feedback__button-and-chart {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.feedback__button-and-chart > * {
+	flex: 0 0 42%;
+	margin: 0 0.5em;
+}
+
+.feedback__no {
+	text-align: right;
+}
+
+.feedback__yes {
+	text-align: left;
+}
+
+.outer-bar {
+	height: 16px;
+	background: var(--background-gray);
+}
+
+.inner-bar {
+	height: 16px;
+	transition: width 0.5s ease-in-out;
+}
+
+.inner-bar__no {
+	width: 0%;
+	transform: rotate(180);
+	background: #0c94e8; /* light blue */
+	margin: 0 0 0 auto;
+}
+
+.inner-bar__yes {
+	width: 0%;
+	background: #ff7ac8; /* light pink */
+}
+
+.fa-star,
+.fa-heart {
+	font-size: 1.5em;
+	opacity: 0.5;
+	margin: 0.2em;
+	cursor: pointer;
+}
+
+.fa-star:hover {
+	opacity: 1;
+	transform: scale(1.1);
+	color: #0c94e8; /* light blue */
+	transition: transform 0.4s ease;
+}
+
+.fa-heart:hover {
+	opacity: 1;
+	transform: scale(1.1);
+	color: #ff7ac8; /* light pink */
+	transition: transform 0.4s ease;
+}
+
 /* ---------- PART END ---------- */
 .part__end {
 	width: 100%;
-	height: 100vh;
+	height: 50vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.part__end__container {
+	width: 40%;
+	color: white;
+	text-align: center;
+}
+
+.part__end__container > h2 {
+	margin: 1em 0 0;
+}
+
+.part__end__container > p {
+	font-family: var(--sans-serif);
+	opacity: 0.5;
+}
+
+.part__end__container > p > .fa-chevron-right {
+	margin-left: 1em;
+	opacity: 0.5;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-name: fa-angle-right;
+	animation-timing-function: ease;
 }
 
 #part-1__end {
 	background: var(--dark-navy);
 }
 
-/* ---------- DATA VIZ --------- */
-.scrolly__container {
-	max-width: 1210px;
-	margin: 25vh auto;
-	/* background: rgba(255, 255, 0, 0.481); */
-	position: relative;
-	display: flex;
-	justify-content: space-between;
+#part-2__end {
+	background: var(--dark-pink);
 }
 
-.scrolly__article {
-	position: relative;
+#part-3__end {
+	background: var(--dark-yellow);
+}
+
+@keyframes fa-angle-right {
+	0% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(7px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+.fa-chevron-up {
+	margin-left: 1em;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-name: fa-angle-up;
+	animation-timing-function: ease;
+}
+
+@keyframes fa-angle-up {
+	0% {
+		transform: translateY(-5px);
+	}
+	50% {
+		transform: translateY(2px);
+	}
+	100% {
+		transform: translateY(-5px);
+	}
+}
+
+.go-back-to-top > p {
+	opacity: 1;
+}
+
+.go-back-to-top > p > a:link,
+.go-back-to-top > p > a:visited {
+	color: white;
+	opacity: 0.5;
+}
+
+.go-back-to-top > p > a:hover {
+	opacity: 1;
+	transition: opacity 0.4s ease;
+}
+
+/* ---------- DATA VIZ --------- */
+.chart__container {
+	max-width: 1210px;
+	min-height: 50vh;
+	margin: 7em auto;
+	/* background: rgba(255, 255, 0, 0.481); */
+	display: flex;
+	align-items: center;
+}
+
+.chart__article {
 	width: 35%;
 	max-width: 450px;
 	/* background: rgba(0, 0, 255, 0.201); */
@@ -434,11 +585,16 @@ article {
 	z-index: -1;
 }
 
-.scrolly__sticky {
-	position: sticky;
-	top: 20vh;
-	height: 50vh;
-	left: 0;
+.explore-data {
+	font-family: var(--sans-serif);
+	font-size: 0.8em;
+	text-align: right;
+	font-weight: bold;
+	margin: 0 0 0 auto;
+}
+
+.chart__figure {
+	height: 300px;
 	margin: 0;
 	width: 65%;
 	max-width: 850px;
@@ -454,13 +610,10 @@ article {
 }
 
 .step {
-	min-height: 50vh;
-	padding: 20vh 0 20vh 2em;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
-	opacity: 0.3;
 }
 
 .step-active {

@@ -168,7 +168,6 @@ function toggleAudioAndQuote(name, partNum, audioEl, textEl, muteEl) {
 			let activeIndex = isActive.findIndex((el) => el === true);
 			if (activeIndex === partNum) {
 				audioEl.muted = true;
-				muteEl.src = "audio/mute-button.svg";
 				textEl.forEach((el) => {
 					el.el.classList.add("quote__text__active");
 				});
