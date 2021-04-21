@@ -5,7 +5,8 @@ let windowSize = {
 };
 const size = {
 	w: document.querySelector(".chart__figure").clientWidth,
-	h: document.querySelector(".chart__figure").clientHeight - 26,
+	// h: document.querySelector(".chart__figure").clientHeight - 26,
+	h: 274,
 };
 const margin = { top: 0, right: 0, bottom: 75, left: 0 };
 const svg = [];
@@ -112,19 +113,26 @@ const colors = {
 
 d3.csv("data/survey-cleaned.csv").then(function (d) {
 	const data = d;
-	let idx = 0;
-	while (idx < 4) {
-		svg[idx] = d3
-			.select(`#survey__${idx}`)
-			.append("svg")
-			.attr("id", `chart__svg__${idx}`)
-			.attr("width", size.w)
-			.attr("height", size.h);
-		group[idx] = svg[idx]
-			.append("g")
-			.classed(`chart__container__${idx}`, true);
-		idx++;
-	}
+	// let idx = 0;
+	// while (idx < 4) {
+	// 	svg[idx] = d3
+	// 		.select(`#survey__${idx}`)
+	// 		.append("svg")
+	// 		.attr("id", `chart__svg__${idx}`)
+	// 		.attr("width", size.w)
+	// 		.attr("height", size.h);
+	// 	group[idx] = svg[idx]
+	// 		.append("g")
+	// 		.classed(`chart__container__${idx}`, true);
+	// 	idx++;
+	// }
+	svg[0] = d3
+		.select(`#survey__0`)
+		.append("svg")
+		.attr("id", `chart__svg__0`)
+		.attr("width", size.w)
+		.attr("height", size.h);
+	group[0] = svg[0].append("g").classed(`chart__container__0`, true);
 	enterViewDrawChart(0, 0, data);
 });
 

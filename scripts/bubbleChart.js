@@ -63,7 +63,14 @@ function BubbleChart() {
 
 		let simulation = d3
 			.forceSimulation(this._data)
-			.force("collide", d3.forceCollide().radius(5.5))
+			.force(
+				"collide",
+				d3
+					.forceCollide()
+					.radius(
+						windowSize.w >= 800 ? 5.5 : (windowSize.w / 800) * 5.5
+					)
+			)
 			.force("charge", d3.forceManyBody().strength(0.3))
 			.force(
 				"x",
@@ -76,7 +83,7 @@ function BubbleChart() {
 					)
 			)
 			.force("y", d3.forceY().y(this._size.h / 2));
-
+		console.log(windowSize);
 		let circles = this._selection
 			.append("g")
 			.classed("circles", true)
@@ -86,7 +93,7 @@ function BubbleChart() {
 			.data(this._data)
 			.join("circle")
 			.attr("yy", (d) => d[0])
-			.attr("r", 5)
+			.attr("r", windowSize.w >= 800 ? 5 : (windowSize.w / 800) * 5)
 			.attr("fill", (d) => colorScale(d[thisKey]));
 
 		simulation.on("tick", () => {
