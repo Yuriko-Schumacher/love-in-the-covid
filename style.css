@@ -61,7 +61,7 @@ body {
 	padding: 0px;
 	font-size: 18px;
 	color: var(--font-main);
-	/* scroll-behavior: smooth; */
+	scroll-behavior: smooth;
 }
 
 a:link,
