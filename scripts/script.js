@@ -1,17 +1,25 @@
 // ---------- TITLE SWIPER AUTOPLAY ----------
-const swiperAutoplay = new Swiper("div.swiper-container-autoplay", {
+const swiperAutoplay = new Swiper("div.swiper-container__autoplay", {
 	spaceBetween: 20,
 	centeredSlides: true,
 	loop: true,
 	speed: 500,
 	autoplay: {
 		delay: 3000,
-		disableOnInteraction: true,
 	},
-	autoplayStop: d3.select("p#stop-auto-swipe").on("click", function () {
+});
+let isAutoSwiping = true;
+
+d3.select(".stop-auto-swipe").on("click", function () {
+	if (isAutoSwiping) {
 		swiperAutoplay.autoplay.stop();
-		d3.select(this).style("opacity", 0).style("cursor", "default");
-	}),
+		d3.select(this).text("resume auto-swiping");
+		isAutoSwiping = false;
+	} else {
+		swiperAutoplay.autoplay.start();
+		d3.select(this).text("stop auto-swiping");
+		isAutoSwiping = true;
+	}
 });
 
 // ---------- TITLE ANIMATION ----------
