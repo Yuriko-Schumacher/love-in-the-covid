@@ -328,11 +328,11 @@ article {
 }
 
 .arrow {
-	width: 50%;
+	width: 60%;
 	text-align: center;
 	position: absolute;
 	top: 110%;
-	left: 25%;
+	left: calc(25% - 50px);
 }
 
 .fa-chevron-down {
@@ -418,6 +418,36 @@ article {
 	border-left: 50px solid var(--yellow);
 }
 
+@media (max-width: 1000px) {
+	#part-1,
+	#part-2,
+	#part-3 {
+		border-left-width: 20px;
+	}
+	.swiper-next-h,
+	.swiper-prev-h {
+		background: rgba(255, 255, 255, 0);
+	}
+	.part-title-container {
+		width: 70%;
+	}
+	.part__intro {
+		align-items: center;
+	}
+	.arrow {
+		position: relative;
+		margin: 0 auto;
+	}
+	.part-1__intro {
+		background-position: calc(100% - 10px) bottom;
+		background-size: auto 90vw;
+	}
+	.part-2__intro {
+		background-position: 10px bottom;
+		background-size: auto 80vw;
+	}
+}
+
 .quote {
 	font-size: 1.5em;
 	margin: 3em auto;
@@ -445,32 +475,28 @@ article {
 	opacity: 1;
 }
 
-@media (max-width: 800px) {
-	#part-1,
-	#part-2,
-	#part-3 {
-		border-left-width: 10px;
+.audio__mobile {
+	display: none;
+}
+
+@media (max-width: 576px) {
+	.click-to-unmute,
+	.audio__desktop,
+	.quote__mute-button {
+		display: none;
 	}
-	.swiper-next-h,
-	.swiper-prev-h {
-		background: rgba(255, 255, 255, 0);
+
+	.audio__mobile {
+		display: block;
+		margin: 1em auto 0;
 	}
-	.part-title-container {
-		width: 70%;
+
+	.quote {
+		font-size: 1.3em;
 	}
-	.part__intro {
-		align-items: center;
-	}
-	.arrow {
-		position: relative;
-	}
-	.part-1__intro {
-		background-position: calc(100% - 10px) bottom;
-		background-size: auto 90vw;
-	}
-	.part-2__intro {
-		background-position: 10px bottom;
-		background-size: auto 80vw;
+
+	.quote__text > * {
+		opacity: 1;
 	}
 }
 
@@ -523,6 +549,10 @@ article {
 	text-align: center;
 }
 
+.feedback__explanation > p {
+	margin: 0.5em;
+}
+
 .feedback__button-and-chart {
 	display: flex;
 	justify-content: center;
@@ -564,8 +594,7 @@ article {
 	background: #ff7ac8; /* light pink */
 }
 
-.fa-star,
-.fa-heart {
+.feedback__button {
 	font-size: 1.5em;
 	opacity: 0.5;
 	margin: 0.2em;
@@ -599,6 +628,7 @@ article {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	cursor: grab;
 }
 
 .part__end__container {

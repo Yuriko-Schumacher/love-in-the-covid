@@ -39,10 +39,17 @@ function getGroupedData(section) {
 }
 
 function changeInnerBarWidth(section, data) {
-	calculatePercentageToChange(section, data);
-}
-
-function calculatePercentageToChange(section, data) {
+	d3.select(`#feedback__explanation__${section}`)
+		.select("p")
+		.text("Thank you!");
+	d3.select(`#feedback__${section}__button__no`).style(
+		"pointer-events",
+		"none"
+	);
+	d3.select(`#feedback__${section}__button__yes`).style(
+		"pointer-events",
+		"none"
+	);
 	if (data.length === 1) {
 		let answer = data[0][0];
 		let yesNum = answer == "yes" ? data[0][1].length : 0;
