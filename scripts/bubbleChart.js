@@ -83,7 +83,6 @@ function BubbleChart() {
 					)
 			)
 			.force("y", d3.forceY().y(this._size.h / 2));
-		console.log(windowSize);
 		let circles = this._selection
 			.append("g")
 			.classed("circles", true)
