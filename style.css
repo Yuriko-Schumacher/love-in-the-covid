@@ -61,7 +61,7 @@ body {
 	padding: 0px;
 	font-size: 18px;
 	color: var(--font-main);
-	scroll-behavior: smooth;
+	/* scroll-behavior: smooth; */
 }
 
 a:link,
@@ -486,10 +486,10 @@ article {
 		display: none;
 	}
 
-	.audio__mobile {
+	/* .audio__mobile {
 		display: block;
 		margin: 1em auto 0;
-	}
+	} */
 
 	.quote {
 		font-size: 1.3em;
